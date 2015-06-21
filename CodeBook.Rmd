@@ -1,0 +1,101 @@
+CODE BOOK
+---
+__This work was done by Luis Martin Alonso__
+
+Raw data:
+
+- __actlabels__: data frame. 6x2. Contains the names and codes for the activities.
+- __features__: data frame. 561x2. Contains the variables names and the order they are distributed.
+- __xtest__: data frame. 2947x561. Contains the values of the variables for the different activities and subjects in the test group.
+- __xtrain__: data frame. 7352x561. Contains the values of the variables for the different activities and subjects in the train group.
+- __subtest__: data frame. 2947x1. Contains the subject codes for the test group data.
+- __subtrain__: data frame. 7352x1. Contains the subject codes for the train group data.
+- __ytest__: data frame. 2947x1. Contains the activity codes for the test group data.
+- __ytrain__: data frame. 7352x1. Contains the activity code for the train group data.
+
+Code Variables:
+
+- __mergedat__: data frame. 10299x561. Merges the data from xtest and xtrain in one big data set.
+- __colmean__: integer vector. 33 objects. Contains the locations of the measurements that have "mean()" in them.
+- __colsd__: integer vector. 33 objects. Contains the locations of the measurements that have "std()" in them.
+- __matdata__: data frame. 10299x68. Subset of mergedat. Contains the data related to the mean and standard deviation of each variable.
+- __ynumtot__: data frame. 10299x1. Merges the data from ytest and ytrain in one big data set.
+- __yacttot__: character vector. 10299 objects. Contains the corresponding activity name of "ynumtot".
+- __subtot__: data frame. 10299x1. Merges the data from subtest and subtrain in one big data set.
+- __colmean2__: character vector. 33 objects. Contains the names of the measurements that have "mean()" in them.
+- __colsd2__: character vector. 33 objects. Contains the names of the measurements that have "std()" in them.
+- __newestdata__: matrix, then data frame. 180x68. Contains the mean of the values of the required measurements.
+- __avvec__: character vector. 68 objects. Needed to make the 'newnames' vector.
+- __namess__: character vector. 68 objects. Needed to make the 'newnames' vector.
+- __newnames__: character vector. 68 objects. Neede to make the column names for the 'newestdata' data frame.
+
+Tiny data:
+
+- __Activity__: Has the name of the activity.
+- __Subject__: Has the code of the subject.
+- __Average tBodyAcc-mean()-X__: Average of the Body Linear Acceleration in the X axis
+- __Average tBodyAcc-mean()-Y__: Average of the Body Linear Acceleration in the Y axis         
+- __Average tBodyAcc-mean()-Z__: Average of the Body Linear Acceleration in the Z axis          
+- __Average tGravityAcc-mean()-X__: Average of the Gravity Linear Acceleration in the X axis
+- __Average tGravityAcc-mean()-Y__: Average of the Gravity Linear Acceleration in the Y axis
+- __Average tGravityAcc-mean()-Z__: Average of the Gravity Linear Acceleration in the Z axis
+- __Average tBodyAccJerk-mean()-X__: Average of the Body Linear Jerk in the X axis
+- __Average tBodyAccJerk-mean()-Y__: Average of the Body Linear Jerk in the Y axis      
+- __Average tBodyAccJerk-mean()-Z__: Average of the Body Linear Jerk in the Z axis  
+- __Average tBodyGyro-mean()-X__: Average of the Body Rotational Acceleration in the X axis
+- __Average tBodyGyro-mean()-Y__: Average of the Body Rotational Acceleration in the Y axis
+- __Average tBodyGyro-mean()-Z__: Average of the Body Rotational Acceleration in the Z axis
+- __Average tBodyGyroJerk-mean()-X__: Average of the Body Rotational Jerk in the X axis
+- __Average tBodyGyroJerk-mean()-Y__: Average of the Body Rotational Jerk in the Y axis
+- __Average tBodyGyroJerk-mean()-Z__: Average of the Body Rotational Jerk in the Z axis
+- __Average tBodyAccMag-mean()__: Average of the magnitude of the Body Linear Acceleration
+- __Average tGravityAccMag-mean()__: Average of the magnitude of the Gravity Linear Acceleration
+- __Average tBodyAccJerkMag-mean()__: Average of the magnitude of the Body Linear Jerk
+- __Average tBodyGyroMag-mean()__: Average of the magnitude of the Body Rotational Acceleration
+- __Average tBodyGyroJerkMag-mean()__: Average of the magnitude of the Body Rotational Jerk
+- __Average fBodyAcc-mean()-X__: Average of the Body Linear Acceleration in the X axis. Frequency domain.
+- __Average fBodyAcc-mean()-Y__: Average of the Body Linear Acceleration in the Y axis. Frequency domain.
+- __Average fBodyAcc-mean()-Z__: Average of the Body Linear Acceleration in the Z axis. Frequency domain.
+- __Average fBodyAccJerk-mean()-X__: Average of the Body Linear Jerk in the X axis. Frequency domain.
+- __Average fBodyAccJerk-mean()-Y__: Average of the Body Linear Jerk in the Y axis. Frequency domain.
+- __Average fBodyAccJerk-mean()-Z__: Average of the Body Linear Jerk in the Z axis. Frequency domain.
+- __Average fBodyGyro-mean()-X__: Average of the Body Rotational Acceleration in the X axis. Frequency domain.
+- __Average fBodyGyro-mean()-Y__: Average of the Body Rotational Acceleration in the Y axis. Frequency domain.
+- __Average fBodyGyro-mean()-Z__: Average of the Body Rotational Acceleration in the X axis. Frequency domain.
+- __Average fBodyAccMag-mean()__: Average of the magnitude of the Body Linear Acceleration. Frequency domain.
+- __Average fBodyBodyAccJerkMag-mean()__: Average of the magnitude of the Body Linear Jerk. Frequency domain.
+- __Average fBodyBodyGyroMag-mean()__:  Average of the magnitude of the Body Rotational Acceleration. Frequency domain.  
+- __Average fBodyBodyGyroJerkMag-mean()__: Average of the magnitude of the Body Rotational Jerk. Frequency domain.
+- __Average tBodyAcc-std()-X__: Average of the Standard Deviation of the Body Linear Acceleration in the X axis.
+- __Average tBodyAcc-std()-Y__: Average of the Standard Deviation of the Body Linear Acceleration in the Y axis.          
+- __Average tBodyAcc-std()-Z__: Average of the Standard Deviation of the Body Linear Acceleration in the Z axis.           
+- __Average tGravityAcc-std()-X__: Average of the Standard Deviation of the Gravity Linear Acceleration in the X axis.    
+- __Average tGravityAcc-std()-Y__: Average of the Standard Deviation of the Gravity Linear Acceleration in the Y axis.    
+- __Average tGravityAcc-std()-Z__: Average of the Standard Deviation of the Gravity Linear Acceleration in the Z axis. 
+- __Average tBodyAccJerk-std()-X__: Average of the Standard Deviation of the Body Linear Jerk in the X axis.      
+- __Average tBodyAccJerk-std()-Y__: Average of the Standard Deviation of the Body Linear Jerk in the Y axis. 
+- __Average tBodyAccJerk-std()-Z__: Average of the Standard Deviation of the Body Linear Jerk in the Z axis.
+- __Average tBodyGyro-std()-X__: Average of the Standard Deviation of the Body Rotational Acceleration in the X axis. 
+- __Average tBodyGyro-std()-Y__: Average of the Standard Deviation of the Body Rotational Acceleration in the Y axis.       
+- __Average tBodyGyro-std()-Z__: Average of the Standard Deviation of the Body Rotational Acceleration in the Z axis.    
+- __Average tBodyGyroJerk-std()-X__: Average of the Standard Deviation of the Body Rotational Jerk in the X axis.     
+- __Average tBodyGyroJerk-std()-Y__: Average of the Standard Deviation of the Body Rotational Jerk in the Y axis. 
+- __Average tBodyGyroJerk-std()-Z__: Average of the Standard Deviation of the Body Rotational Jerk in the Z axis.
+- __Average tBodyAccMag-std()__: Average of the Standard Deviation of the magnitude of the Body Linear Acceleration.
+- __Average tGravityAccMag-std()__: Average of the Standard Deviation of the magnitude of the Gravity Linear Acceleration.  
+- __Average tBodyAccJerkMag-std()__: Average of the Standard Deviation of the magnitude of the Body Linear Jerk. 
+- __Average tBodyGyroMag-std()__: Average of the Standard Deviation of the magnitude of the Body Rotational Acceleration. 
+- __Average tBodyGyroJerkMag-std()__: Average of the Standard Deviation of the magnitude of the Body Rotational Jerk. 
+- __Average fBodyAcc-std()-X__: Average of the Standard Deviation of the Body Linear Acceleration in the X axis. Frequency domain.
+- __Average fBodyAcc-std()-Y__: Average of the Standard Deviation of the Body Linear Acceleration in the Y axis. Frequency domain.    
+- __Average fBodyAcc-std()-Z__: Average of the Standard Deviation of the Body Linear Acceleration in the Z axis. Frequency domain.
+- __Average fBodyAccJerk-std()-X__: Average of the Standard Deviation of the Body Linear Jerk in the X axis. Frequency domain.  
+- __Average fBodyAccJerk-std()-Y__: Average of the Standard Deviation of the Body Linear Jerk in the Y axis. Frequency domain.
+- __Average fBodyAccJerk-std()-Z__: Average of the Standard Deviation of the Body Linear Jerk in the Z axis. Frequency domain.
+- __Average fBodyGyro-std()-X__: Average of the Standard Deviation of the Body Rotational Acceleration in the X axis. Frequency domain.
+- __Average fBodyGyro-std()-Y__: Average of the Standard Deviation of the Body Rotational Acceleration in the Y axis. Frequency domain.  
+- __Average fBodyGyro-std()-Z__: Average of the Standard Deviation of the Body Rotational Acceleration in the Z axis. Frequency domain.      
+- __Average fBodyAccMag-std()__: Average of the Standard Deviation of the magnitude of the Body Linear Acceleration. Frequency domain.     
+- __Average fBodyBodyAccJerkMag-std()__: Average of the Standard Deviation of the magnitude of the Body Linear Jerk. Frequency domain.   
+- __Average fBodyBodyGyroMag-std()__: Average of the Standard Deviation of the magnitude of the Body Rotational Acceleratoin. Frequency domain.
+- __Average fBodyBodyGyroJerkMag-std()__: Average of the Standard Deviation of the magnitude of the Body Rotational Jerk. Frequency domain.

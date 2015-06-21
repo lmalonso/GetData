@@ -1,0 +1,43 @@
+README
+---
+__This work was done by Luis Martin Alonso__
+
+First, we must set our working directory. After that, we get the differente data sets provided by the .zip file. 
+For this work, we will get the following data sets and store them in the corresponding variable.
+
+- activity_labels.txt - actlabels
+- features.txt - features
+- test/X_test.txt - xtest
+- test/subject_test.txt - subtest
+- test/y_test.txt - ytest
+- train/X_train.txt - xtrain
+- train/subject_train.txt - subtrain
+- train/y_train.txt - ytrain
+
+Now that we have the data in different variable, we will follow the required 
+steps for this assignment
+
+###1. Merges the training and the test sets to create one data set
+We will merge the xtest and xtrain data sets in the variable mergedat using the function rbind __(run_analysis.R line 11)__.
+
+###2. Extracts only the measurements on the mean and standard deviation for each measurement
+We will look for the columns with data of the mean and standard deviation. Using the function "grep"" we will extract from data set 'features' the values that have exactly "mean()" and "std()" in their names, and we will store their location in the vectors "colmean" and "colsd", respectively. After that, we will look only for the columns in "mergedata" that matches the location in the vectors. This new data set will be stored in "matdata" __(run_analysis.R lines 13-15)__.
+
+###3. Uses descriptive activity names to name the activities in the data set
+For this step, we will combine the ytest and ytrain data sets into the "ynumtot" using "rbind", and then we will create a new vector "yacttot" that replaces the activity number with the activity name using a for loop. __(run_analysis.R lines 17-26)__  
+
+Due to comfort, we will convert "matdat" to a data table.__(run_analysis.R lines 27-28)__
+
+Then, we will add the vector "yacttot" to "matdata". Also, we will generate the vector "subtot" containing the subjects id number from both subtest and subtrain and add it to "matdata".__(run_analysis.R lines 29-31)__
+
+###4. Appropriately labels the data set with descriptive variable names. 
+Now, we will get the names of the columns for "matdata" from "features". For this, we will also use the "grep" function, but declaring argument "value" as TRUE. We will sore the names in the vectors "colmean2" and "colsd2". Then we will convert "matdata" to a data frame, and finally add the column names with the function "colnames", but remembering that as we have two more columns, we must add their respective names.__(run_analysis.R lines 33-36)__
+
+###5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+We will create the matrix "newestdata" and the vector "mean" __(run_analysis.R lines 38-39)__. 
+
+Then, in a triple for loop we will get the mean for each variable, for each activity, and for each subject in the data set "matdata". The for loop do as follows: First, it subsets "matdata" for one type of "Activity", then it subsets again for one specific "Subject". Finally, as we have a subset for a specific activity and a specific subject, we calculate the mean for each one of the variables, and store each calculated mean in one place of the vector "meann". We do this for all combinations of "Activity" and "Subject", for a total of 180 differente combinations. We also add the corresponding "Activity" and "Subject" type to each calculation fo the means, so we can distinguish between them. Before re-entering in the for loop, we store the vector "meann" (now filed) in the respective row of  matrix "newestdata". __(run_analysis.R lines 40-54)__
+
+After the for loop, we convert the matrix "newestdata" in a data frame. We need to add new names, so we create a vector containing the names "Subject", "Activity", and "Average..." for every mean the calculated, adn add it to "newestdata".__(run_analysis.R lines 55-59)__
+
+For the tiny data output, we use the function "write.table" to generate a .txt file with our new clean data.__(run_analysis.R line 60)__
